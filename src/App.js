@@ -3,6 +3,7 @@ import { Header } from "../src/components/Header/Header";
 import { MiniCat } from "./components/MiniCat/MiniCat";
 import { Banner } from "./components/Banner/Banner";
 import { FeaturedItems } from "../src/components/Featured items/FeaturedItems";
+import { Footer } from "./components/Footer/Footer";
 import { Fresh  } from "../src/components/FreshRecomendation/Fresh";
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
      <Banner/>
      <FeaturedItems/>
      <Fresh/>
+     <Footer/>
     </div>
   );
 }
