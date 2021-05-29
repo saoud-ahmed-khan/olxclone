@@ -1,5 +1,6 @@
 import React from "react";
 import "./Feature.css";
+import { FeatureItems } from "./FeatureItems";
 const data=[
     {
         title:"orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ",
@@ -21,10 +22,12 @@ const data=[
 export function FeaturedItems() {
   return (
     <div className="Featured-Main">
-      <div className="Featured-inner">
-        <div className="FEatured-header"> More From Featured Items </div>
-
-      </div>
+        <div className="featues-header">Featured Items</div>
+        <div className="Feature-map">
+            {
+              data.map(items=> <FeatureItems items={items.title} rs={items.rs}/>)  
+            }
+        </div>
     </div>
   );
 }

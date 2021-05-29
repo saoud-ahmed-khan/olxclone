@@ -1,0 +1,54 @@
+.fresh-Main {
+  width: 80%;
+  margin: auto;
+  height: auto;
+  margin-top: 2%;
+  padding: 1%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.fresh-map {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.fresh-item {
+  border: 1px solid grey;
+  background-color: white;
+  display: flex;
+  padding: 1%;
+  border-radius: 5px;
+  flex-direction: column;
+  width: 25%;
+  margin-bottom: 2%;
+}
+.fresh-header {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 1%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) 
+{
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -1,23 +1,37 @@
 .Featured-Main
 {
     width: 80%;
-    height: 200px;
-    background-color: #F0F8FF;
-    border-radius: 10px;
+    background-color: whitesmoke;
     margin: auto;
+    height: auto;
     margin-top: 2%;
-    color: #001B3A;
+    
+    padding: 1%;
+    border-radius: 10px;
 }
-.Featured-inner
+.Feature-map
 {
-    width: 90%;
-    padding: 1.5%;
-}
-.FEatured-header
-{
-    justify-content: center;
     display: flex;
-    font-size: 25px;
-    font-weight: 450;
-    word-spacing: 2px;
+    margin: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    
+}
+.Featured-item
+
+{
+border: 1px solid grey; 
+background-color: white;   
+display: flex;
+padding: 1%;
+border-radius: 5px;
+flex-direction: column;
+width: 20%;
+}
+.featues-header
+{
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 1%;
 }
