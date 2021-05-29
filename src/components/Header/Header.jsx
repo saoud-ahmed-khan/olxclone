@@ -7,7 +7,7 @@ export function Header() {
     
 
     return (
-        <div className="header-main">
+        <div  className="header-main">
             
             <div className="header-logo">A|X</div>
 

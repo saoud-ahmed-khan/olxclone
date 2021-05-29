@@ -2,9 +2,12 @@
   width: 100%;
   background-color: whitesmoke;
   display: flex;
-  height: 9vh;
-  position: fixed;
+  height: 75px;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 1;
   margin: auto;
   align-items: center;
   flex-direction: row;
@@ -38,6 +41,7 @@
   align-items: center;
   display: flex;
   height: 100%;
+  width: 100%;
   cursor: pointer;
 }
 .header-location button:focus {
@@ -95,6 +99,7 @@ justify-content: center;
     display: flex;
     border: 2px solid black;
     border-radius: 90px;
+    background-color: white;
     height: 50%;
     align-items: center;
     padding-left: 1%;
