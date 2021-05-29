@@ -1,0 +1,23 @@
+.Featured-Main
+{
+    width: 80%;
+    height: 200px;
+    background-color: #F0F8FF;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 2%;
+    color: #001B3A;
+}
+.Featured-inner
+{
+    width: 90%;
+    padding: 1.5%;
+}
+.FEatured-header
+{
+    justify-content: center;
+    display: flex;
+    font-size: 25px;
+    font-weight: 450;
+    word-spacing: 2px;
+}

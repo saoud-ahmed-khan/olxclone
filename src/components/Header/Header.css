@@ -1,6 +1,6 @@
 .header-main {
   width: 100%;
-  background-color: whitesmoke;
+  background-color: #86C5D8;
   display: flex;
   height: 75px;
   justify-content: center;
@@ -15,6 +15,7 @@
 .header-logo {
   font-size: 2rem;
   font-weight: 600;margin-right: 2%;
+  color: #001B3A;
 
 }
 
@@ -23,7 +24,7 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  border: 2px solid black;
+  border: 2px solid #001B3A;
   border-radius: 4px;
   height: 65%;
 
@@ -54,7 +55,7 @@
   display: flex;
   align-items: center;
   background-color: white;
-  border: 2px solid black;
+  border: 2px solid #001B3A;
   border-radius: 4px;
   height: 65%;
   margin-left: 1%;
@@ -72,7 +73,7 @@
 }
 .header-items button {
   border: none;
-  background-color: black;
+  background-color: #001B3A;
   color: white;
   height: 100%;
   font-size: large;
@@ -97,7 +98,8 @@ justify-content: center;
 }
 .header-sale{
     display: flex;
-    border: 2px solid black;
+    border: 2px solid #001B3A;
+    color: #001B3A;
     border-radius: 90px;
     background-color: white;
     height: 50%;
@@ -111,6 +113,7 @@ justify-content: center;
     margin-left: 1%;
     transition: 3s;
     cursor: pointer;
+    color: #001B3A;
 }
 .header-login:hover{
     text-decoration: underline;
