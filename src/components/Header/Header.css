@@ -1,0 +1,143 @@
+.header-main {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  height: 9vh;
+  position: fixed;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  flex-direction: row;
+}
+.header-logo {
+  font-size: 2rem;
+  font-weight: 600;margin-right: 2%;
+
+}
+
+.header-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 4px;
+  height: 65%;
+
+}
+.header-location input[type="text"] {
+  border: none;
+  padding-left: 2%;
+  font-size: 18px;
+}
+.header-location button {
+  border: none;
+  background-color: white;
+  font-size: large;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  cursor: pointer;
+}
+.header-location button:focus {
+  outline: 0 !important;
+}
+.header-location input[type="text"]:focus {
+  outline: 0 !important;
+}
+.header-items {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 4px;
+  height: 65%;
+  margin-left: 1%;
+  width: 42%;
+}
+.header-searchbar{
+    width: 100%;
+    border: none;
+}
+.header-items button:focus {
+  outline: 0 !important;
+}
+.header-items input[type="text"]:focus {
+  outline: 0 !important;
+}
+.header-items button {
+  border: none;
+  background-color: black;
+  color: white;
+  height: 100%;
+  font-size: large;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+width: 100%;
+justify-content: center;
+
+}
+.header-items input[type="text"] {
+  border: none;
+  padding-left: 2%;
+  font-size: 18px;
+  width: 100%;
+}
+.header-searchbutton {
+  height: 100%;
+  width: 15%;
+  margin-right: 0;
+}
+.header-sale{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 90px;
+    height: 50%;
+    align-items: center;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-left: 1%;
+    
+}
+.header-login{
+    margin-left: 1%;
+    transition: 3s;
+    cursor: pointer;
+}
+.header-login:hover{
+    text-decoration: underline;
+    transition: 2s;
+}
+@media only screen and (max-width: 600px) 
+{
+    .header-location{
+        display: none;
+    }
+    .header-items{
+        width: 55%;
+        
+    }
+}
+@media only screen and (min-width: 600px) 
+{
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) 
+{
+    
+}
+@media only screen and (min-width: 922px) 
+{
+    
+}
+@media only screen and (min-width: 1200px) 
+{
+   
+    
+}
+
