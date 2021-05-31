@@ -1,2 +1,3 @@
 const {userRouter}=require("./user.route")
-module.exports = [userRouter];
+const {cityRouter}=require("./City.Route")
+module.exports = [userRouter,cityRouter];

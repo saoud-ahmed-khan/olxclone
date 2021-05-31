@@ -7,7 +7,7 @@ const citySchema = new schema(
       type: String,
       trim: true,
       require: true,
-    },
+    }
   },
   { timestamps: true }
 );
