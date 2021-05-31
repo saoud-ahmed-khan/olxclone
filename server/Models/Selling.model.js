@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const sellingSchema = new Schema({
-  user: {
+  userid: {
     type: Schema.Types.ObjectId,
     ref: "user",
     require: true,
   },
-  cat: {
+  catid: {
     type: Schema.Types.ObjectId,
     ref: "Cat",
     require: true,
@@ -31,7 +31,7 @@ const sellingSchema = new Schema({
     type: Boolean,
     default: false,
     require: true,
-  }
+  },
 });
 
 exports.sellingModel = mongoose.model("Selling", sellingSchema);
