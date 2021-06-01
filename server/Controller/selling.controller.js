@@ -10,6 +10,7 @@ exports.selling = async (req, res) => {
       description,
       price,
       isSold,
+      productImage: req.file.orig,
     });
     sellingData.save();
     res.json({

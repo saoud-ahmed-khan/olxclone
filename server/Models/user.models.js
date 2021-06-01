@@ -4,7 +4,7 @@ const schema = mongoose.Schema;
 const userschema = new schema(
   {
     username: {
-      require: true,
+      required: true,
       trim: true,
       lowercase: true,
       type: String,
@@ -12,23 +12,23 @@ const userschema = new schema(
     phone: {
       type: String,
       trim: true,
-      require: true,
+      required: true,
       unique: true,
     },
     city: {
       type: schema.Types.ObjectId,
       ref: "city",
-      require: true,
+      required: true,
     },
     password: {
       type: String,
       trim: true,
-      require: true,
+      required: true,
     },
     address: {
       type: String,
       trim: true,
-      require: true,
+      required: true,
     },
   },
   { timestamps: true }

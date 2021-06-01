@@ -6,7 +6,7 @@ const citySchema = new schema(
     cities: {
       type: String,
       trim: true,
-      require: true,
+      required: true,
     }
   },
   { timestamps: true }

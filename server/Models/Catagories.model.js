@@ -6,7 +6,7 @@ const catSchema = new Schema(
     catagories: {
       type: String,
       trim: true,
-      require: true,
+      required: true,
     },
   },
   { timestamps: true }

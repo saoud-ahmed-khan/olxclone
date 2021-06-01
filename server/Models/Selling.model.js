@@ -5,32 +5,40 @@ const sellingSchema = new Schema({
   userid: {
     type: Schema.Types.ObjectId,
     ref: "user",
-    require: true,
+    required: true,
   },
   catid: {
     type: Schema.Types.ObjectId,
     ref: "Cat",
-    require: true,
+    required: true,
   },
   title: {
     type: String,
-    require: true,
+    required: true,
     trim: true,
   },
   description: {
     type: String,
-    require: true,
+    required: true,
     trim: true,
   },
   price: {
     type: String,
-    require: true,
+    required: true,
     trim: true,
   },
   isSold: {
     type: Boolean,
     default: false,
-    require: true,
+    required: true,
+  },
+  productImage: {
+    type: String,
+    required: true,
+  },
+  postData: {
+    type: Date,
+    default: Date.now(),
   },
 });
 

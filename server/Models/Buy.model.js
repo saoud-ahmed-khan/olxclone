@@ -5,12 +5,12 @@ const BuySchema= new Schema({
     sellItem: {
         type: Schema.Types.ObjectId,
         ref: "city",
-        require: true,
+        required: true,
       },
       user:{
         type: Schema.Types.ObjectId,
         ref: "user",
-        require: true,
+        required: true,
       }
 },{timestamps:true})
 
