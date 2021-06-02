@@ -5,12 +5,12 @@ import { MiniCat } from "./components/MiniCat/MiniCat";
 // import { FeaturedItems } from "../src/components/Featured items/FeaturedItems";
 // import { Footer } from "./components/Footer/Footer";
 // import { Fresh  } from "../src/components/FreshRecomendation/Fresh";
-// import { Login } from "./components/Login/Login";
+import { Login } from "./components/Login/Login";
 import { Signup } from "./components/signup/Signup";
 function App() {
 
   return (
-    <div>
+    <div className="app">
      <Header/>
      <MiniCat/>
      {/* <Banner/>
@@ -18,7 +18,7 @@ function App() {
      <Fresh/>
      <Footer/> */}
      {/* <Login/> */}
-     <Signup/>
+     {/* <Signup/> */}
     </div>
   );
 }

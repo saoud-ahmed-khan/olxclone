@@ -6,7 +6,7 @@ import { BiPhone } from "react-icons/bi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { ImAddressBook } from "react-icons/im";
-import { IoMdLogIn } from "react-icons/io";
+import { BiUserPlus } from "react-icons/bi";
 import { FaCity } from "react-icons/fa";
 import { Error } from "../Login/ErrorMessage";
 import "../Login/login.css";
@@ -53,7 +53,7 @@ const validationSchema = Yup.object({
   passwordConfirmation: Yup.string()
     .required("Confirm Password missing")
     .oneOf([Yup.ref("password"), null], "Passwords is not matching"),
-  city: Yup.string().required("City is required"),
+  city: Yup.string().required("City missing"),
 });
 export function Signup() {
   return (
@@ -127,9 +127,9 @@ export function Signup() {
           </div>
 
           <div className="login-button">
-            <IoMdLogIn size="35" className="login-logo" />
+            <BiUserPlus size="35" className="login-logo" />
             <button onClick={submit} type="submit">
-              Login
+              Sign Up
             </button>
           </div>
         </Form>

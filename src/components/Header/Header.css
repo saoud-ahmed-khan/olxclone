@@ -1,6 +1,6 @@
 .header-main {
   width: 100%;
-  background-color: #86C5D8;
+  background-color: #06baac;
   display: flex;
   height: 75px;
   justify-content: center;
@@ -121,6 +121,10 @@ justify-content: center;
 }
 @media only screen and (max-width: 600px) 
 {
+  .header-main{
+    width: 100%;
+  }
+
     .header-location{
         display: none;
     }

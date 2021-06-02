@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { BiPhone } from "react-icons/bi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { IoMdLogIn } from "react-icons/io";
+import { BiUserPlus } from "react-icons/bi";
 import { Error } from "./ErrorMessage";
 import "./login.css";
 
@@ -18,13 +19,16 @@ const phoneRegExp = /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{
 
 const validationSchema = Yup.object({
   phone: Yup.string()
-    .required("required")
+    .required("Phone Number Missing")
     .matches(phoneRegExp, "Phone number is not valid"),
   password: Yup.string().required(" Password Required"),
 });
 
-export function Login() {
+export function Login({modal,setModal}) {
   return (
+    <>
+    { modal ?
+       <div className="background">
     <div className="form-login">
       <div>
         <h1>User login</h1>
@@ -39,7 +43,7 @@ export function Login() {
         <Form>
           <div className="phone">
             <div className="phone-inner">
-              <AiOutlineUser className="login-logo" size="35" />
+              <BiPhone className="login-logo" size="35" />
               <Field type="text" id="phone" name="phone" />
             </div>
             <ErrorMessage component={Error} name="phone" />
@@ -59,6 +63,15 @@ export function Login() {
           </div>
         </Form>
       </Formik>
+      <div className="login-button">
+            <BiUserPlus size="35" className="login-logo" />
+            <button  type="submit">
+              Sign Up
+            </button>
+          </div>
     </div>
+    </div>
+    :null}
+    </>
   );
 }
