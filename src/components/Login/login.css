@@ -108,14 +108,14 @@ button:focus,
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .form-login {
-    width: 100%;
+    width: 85%;
   }
   .form-login input[type="text"],
   input[type="password"] {
     width: 300px;
   }
   .form-signup {
-    width: 100%;
+    width: 85%;
   }
   .form-signup input[type="text"],
   input[type="password"] {
