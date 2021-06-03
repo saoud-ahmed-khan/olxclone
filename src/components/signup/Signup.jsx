@@ -10,6 +10,9 @@ import { BiUserPlus } from "react-icons/bi";
 import { FaCity } from "react-icons/fa";
 import { Error } from "../Login/ErrorMessage";
 import "../Login/login.css";
+import AOS from "aos";
+
+import "aos/dist/aos.css";
 const options = [
   {
     value: "",
@@ -55,9 +58,18 @@ const validationSchema = Yup.object({
     .oneOf([Yup.ref("password"), null], "Passwords is not matching"),
   city: Yup.string().required("City missing"),
 });
-export function Signup() {
+export function Signup({sign, setSign}) {
+  React.useEffect(() => {
+    AOS.init({
+      duration: 500,
+    });
+  }, []);
   return (
-    <div className="form-signup">
+    <>
+    {
+      sign ?
+      <div className="background">
+    <div className="form-signup" data-aos="zoom-in">
       <div>
         <h1>Sign Up</h1>
       </div>
@@ -135,5 +147,9 @@ export function Signup() {
         </Form>
       </Formik>
     </div>
+    </div>
+    :null
+  }
+    </>
   );
 }
