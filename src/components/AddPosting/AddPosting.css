@@ -1,0 +1,34 @@
+.AddPosting-wraper {
+ 
+  border: 2px solid grey;
+  width: 100%;
+
+}
+.AddPosting-main{
+    height: auto;
+    width: 80%;
+    margin-top: 2%;
+    margin: auto;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.AddPosting-heading{
+    padding: 2%;
+    border-bottom: 2px solid grey;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.AddPosting-Cat-Main{
+    display: flex;
+    width: 100%;
+    flex-direction: row;   
+}
+.borderright{
+    border-right: 2px solid grey;
+}
+.AddPosting-Cat-lists{
+    width: 50%;
+
+}
