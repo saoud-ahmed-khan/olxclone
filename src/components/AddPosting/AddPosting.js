@@ -1,14 +1,13 @@
 import React from "react";
 import "./AddPosting.css";
-import {IconContext} from "react-icons";
-
+import * as Fa from "react-icons/fa";
 
 let data = [
-  { Catname: "Mobile Phones", icon: "FaMobileAlt" },
-  { Catname: "Cars", icon: "FaCar" },
-  { Catname: "Bike", icon: "FaBiking" },
-  { Catname: "House", icon: "FaHome" },
-  { Catname: "Electronics Appliences", icon: "FaTools" },
+  { Catname: "Mobile Phones", icon: Fa.FaMobileAlt },
+  { Catname: "Cars", icon: Fa.FaCar },
+  { Catname: "Bike", icon: Fa.FaBiking },
+  { Catname: "House", icon: Fa.FaHome },
+  { Catname: "Electronics Appliences", icon: Fa.FaTools },
 ];
 export function AddPosting() {
   return (
@@ -17,18 +16,23 @@ export function AddPosting() {
       <div className="AddPosting-wraper">
         <div className="AddPosting-heading">CHOOSE A CATEGORY</div>
         <div className="AddPosting-Cat-Main">
-          <div className="AddPosting-Cat-lists borderright">
-            <IconContext.Provider       value={{ color: 'blue', size: '50px' }}
->
-              <div>
-                {data.map((data) => (
-                  <div>
-                      <div><span></span> {data.Catname}</div>
-                      <div>{<data.icon/>}</div>
+          <div className="AddPosting-Cat-lists">
+            <div>
+              {data.map((data) => (
+                <div className="AddPosting-Cat-lists-inner borderright">
+                  <div className="add-logo">
+                    <span style={{marginRight:"10px"}}>{<data.icon size="25" />}</span>
+                    <span>{data.Catname}</span>
                   </div>
-                ))}
-              </div>
-            </IconContext.Provider>
+                  <div>
+                    <Fa.FaArrowRight
+                      size="20"
+                      style={{ alignItems: "center" }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="AddPosting-Cat-lists">
             <div></div>

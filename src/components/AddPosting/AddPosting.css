@@ -1,34 +1,53 @@
 .AddPosting-wraper {
- 
   border: 2px solid grey;
   width: 100%;
-
 }
-.AddPosting-main{
-    height: auto;
-    width: 80%;
-    margin-top: 2%;
-    margin: auto;
-    margin-top: 2%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.AddPosting-main {
+  height: auto;
+  width: 80%;
+  margin-top: 2%;
+  margin: auto;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-.AddPosting-heading{
-    padding: 2%;
-    border-bottom: 2px solid grey;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.AddPosting-heading {
+  padding: 2%;
+  border-bottom: 2px solid grey;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.AddPosting-Cat-Main{
-    display: flex;
+.AddPosting-Cat-Main {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+.borderright {
+  border-right: 2px solid grey;
+}
+.AddPosting-Cat-lists {
+  width: 50%;
+}
+.AddPosting-Cat-lists-inner {
     width: 100%;
-    flex-direction: row;   
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    padding: 2%;
+    height: auto;
+    margin: auto;
+    
 }
-.borderright{
-    border-right: 2px solid grey;
+.add-logo {
+    display: flex;
+    align-items: center;
+    width: 100;
+    
 }
-.AddPosting-Cat-lists{
-    width: 50%;
+.add-logo span{
 
 }
+
