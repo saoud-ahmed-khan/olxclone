@@ -1,46 +1,35 @@
-import React from "react";
+import {React,useState} from "react";
 import "./AddPosting.css";
+import { AddPostingLeft } from "./AddPostingLeft";
 import * as Fa from "react-icons/fa";
+import { AddPostingRight } from "./AddPostingRight";
 
 let data = [
-  { Catname: "Mobile Phones", icon: Fa.FaMobileAlt },
+  { Catname: "Mobiles", icon: Fa.FaMobileAlt },
   { Catname: "Cars", icon: Fa.FaCar },
   { Catname: "Bike", icon: Fa.FaBiking },
   { Catname: "House", icon: Fa.FaHome },
-  { Catname: "Electronics Appliences", icon: Fa.FaTools },
+  { Catname: "Electronics", icon: Fa.FaTools },
 ];
+
+
 export function AddPosting() {
+  const [subData, setSubData]=useState("")
   return (
     <div className="AddPosting-main">
-      <h3 className="AddPosting-heading">POST YOUR AD</h3>
+      <h1>POST YOUR AD</h1>
       <div className="AddPosting-wraper">
         <div className="AddPosting-heading">CHOOSE A CATEGORY</div>
         <div className="AddPosting-Cat-Main">
-          <div className="AddPosting-Cat-lists">
+          <div className="AddPosting-Cat-lists"> 
             <div>
-              {data.map((data) => (
-                <div className="AddPosting-Cat-lists-inner borderright">
-                  <div className="add-logo">
-                    <span style={{ marginRight: "10px" }}>
-                      {<data.icon size="20" />}
-                    </span>
-                    <span>{data.Catname}</span>
-                  </div>
-                  <div>
-                    <Fa.FaArrowRight
-                      size="20"
-                      style={{ alignItems: "center" }}
-                    />
-                  </div>
-                </div>
+              {data.map((data, index) => (
+                <AddPostingLeft key={index} sub={subData} data={data} setData={setSubData}/>
               ))}
             </div>
           </div>
-          <div className="AddPosting-Cat-lists">
-            <div className="AddPosting-Cat-lists-inner ">
-              <div>saoud</div>
-              <div><Fa.FaArrowRight size="20" style={{ alignItems: "center" }} /></div>
-            </div>
+          <div className="AddPosting-Cat-lists borderright">
+            <AddPostingRight inerdata={subData}/>
           </div>
         </div>
       </div>

@@ -15,7 +15,6 @@
     "react-scroll-parallax": "^2.4.0",
     "reactjs-popup": "^2.0.4",
     "web-vitals": "^1.0.1",
-    "webpack": "^4.44.2",
     "webpack-dev-server": "^3.11.1",
     "yup": "^0.32.9"
   },
