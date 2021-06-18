@@ -21,7 +21,9 @@ export function AddPosting() {
               {data.map((data) => (
                 <div className="AddPosting-Cat-lists-inner borderright">
                   <div className="add-logo">
-                    <span style={{marginRight:"10px"}}>{<data.icon size="25" />}</span>
+                    <span style={{ marginRight: "10px" }}>
+                      {<data.icon size="20" />}
+                    </span>
                     <span>{data.Catname}</span>
                   </div>
                   <div>
@@ -35,7 +37,10 @@ export function AddPosting() {
             </div>
           </div>
           <div className="AddPosting-Cat-lists">
-            <div></div>
+            <div className="AddPosting-Cat-lists-inner ">
+              <div>saoud</div>
+              <div><Fa.FaArrowRight size="20" style={{ alignItems: "center" }} /></div>
+            </div>
           </div>
         </div>
       </div>
