@@ -1,0 +1,19 @@
+.AddPostForm-wrapper{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+.AddPostForm-main{
+width: 100%;
+border: 2px solid gray;
+}
+.AddPostForm-main-inner{
+    width: 100%;
+    display: flex;
+    margin: auto;
+    border-bottom: 2px solid grey;
+    flex-direction: column;
+    
+}
