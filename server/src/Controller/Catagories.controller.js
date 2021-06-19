@@ -1,4 +1,4 @@
-const {CatModel } = require("../Models/index.model");
+const { CatModel } = require("../Models/index.model");
 
 exports.addCat = async (req, res) => {
   const { catagories } = req.body;
@@ -8,10 +8,10 @@ exports.addCat = async (req, res) => {
     });
     insertCat.save();
     res.json({
-        success: true,
-        message: "your city is added",
-        insertCat,
-      });
+      success: true,
+      message: "your city is added",
+      insertCat,
+    });
   } catch (error) {
     console.log(error.message);
     return res.status(500).send({

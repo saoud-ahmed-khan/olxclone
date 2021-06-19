@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const { dbConnect } = require("./Database/index");
+const { dbConnect } = require("./src/Config/Database/index");
 const app = express();
 
 

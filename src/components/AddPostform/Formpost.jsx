@@ -152,8 +152,8 @@ export function Formpost() {
             </div>
           </div>
 
-          <div className="">
-            <button onClick={submit} type="submit">
+          <div className="add-firstbutton" >
+            <button className="Add-button" onClick={submit} type="submit">
               Post Now
             </button>
           </div>
