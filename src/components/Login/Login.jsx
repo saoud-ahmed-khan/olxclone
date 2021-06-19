@@ -17,10 +17,11 @@ const initialValue = {
   phone: "",
   password: "",
 };
-const submit = (values: any) => {
+const submit = (values) => {
   console.log(`formdata ${values}`);
 };
-const phoneRegExp = /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/;
+const phoneRegExp =
+  /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/;
 
 const validationSchema = Yup.object({
   phone: Yup.string()

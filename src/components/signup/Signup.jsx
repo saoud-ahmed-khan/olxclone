@@ -40,14 +40,16 @@ const initialValue = {
   passwordConfirmation: "",
   city: "",
 };
-const submit = (values: any) => {
+const submit = (values) => {
   console.log(`formdata ${values}`);
 };
-const phoneRegExp = /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/;
+const phoneRegExp =
+  /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/;
 
 const validationSchema = Yup.object({
-  username: Yup.string().required("Username mising").matches(/[abcdefghijklmnopqrstuvwxyz]+/ , 'Must be a Letter')
-,
+  username: Yup.string()
+    .required("Username mising")
+    .matches(/[abcdefghijklmnopqrstuvwxyz]+/, "Must be a Letter"),
   address: Yup.string().required("address mising"),
 
   phone: Yup.string()
@@ -55,7 +57,7 @@ const validationSchema = Yup.object({
     .matches(phoneRegExp, "Phone number is not valid"),
   password: Yup.string()
     .required("Password missing")
-    .min(8, 'Password is too short'),
+    .min(8, "Password is too short"),
 
   passwordConfirmation: Yup.string()
     .required("Confirm Password missing")
@@ -78,7 +80,6 @@ export function Signup({ sign, setSign }) {
             </div>
 
             <Formik
-              class
               validationSchema={validationSchema}
               onSubmit={submit}
               initialValues={initialValue}
@@ -87,7 +88,12 @@ export function Signup({ sign, setSign }) {
                 <div className="phone">
                   <div className="phone-inner">
                     <AiOutlineUser className="login-logo" size="35" />
-                    <Field type="text" placeholder="User Name" id="username" name="username" />
+                    <Field
+                      type="text"
+                      placeholder="User Name"
+                      id="username"
+                      name="username"
+                    />
                   </div>
                   <ErrorMessage component={Error} name="username" />
                 </div>

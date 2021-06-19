@@ -1,5 +1,6 @@
 import React from "react";
 import "./AddPostForm.css";
+import { Formpost } from "./Formpost";
 
 export function AddPostForm() {
   return (
@@ -8,10 +9,12 @@ export function AddPostForm() {
       <div className="AddPostForm-main">
         <div className="AddPostForm-main-inner">
           <div>
-        
             <h3>SELECTED CATEGORY</h3>
             <p style={{ marginTop: "0" }}>Mobiles / Tablets</p>
           </div>
+        </div>
+        <div className="AddPostForm-Form-Main">
+          <Formpost />
         </div>
       </div>
     </div>

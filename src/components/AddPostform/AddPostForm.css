@@ -1,19 +1,134 @@
-.AddPostForm-wrapper{
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+.AddPostForm-wrapper {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.AddPostForm-main {
+  width: 100%;
+  border: 2px solid gray;
+  border-radius: 3px;
+}
+.AddPostForm-main-inner {
+  width: 100%;
+  display: flex;
+  border-bottom: 2px solid grey;
+  flex-direction: column;
+}
+.AddPostForm-main-inner div {
+  margin-left: 1%;
+}
+.AddPostForm-Form-Main {
+  width: 100%;
+  height: auto;
+}
+.Formik-Form-Add {
+  width: 100%;
+  height: auto;
+}
+.add-title {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+.add-title-inner {
+  display: flex;
+  width: 100%;
+
+  justify-content: center;
+
+  flex-direction: column;
+}
+.add-title-inner input[type="text"], input[type="number"] {
+  width: 97.5%;
+  font-size: 18px;
+  font-size: 14px;
+  margin-bottom: 1%;
+  padding: 1%;
+  border: 3px solid grey;
+}
+.selectadd {
+  width: 100%;
+  font-size: 18px;
+  padding: 5px;
+  padding: 1%;
+  border: none;
+  border: 3px solid grey;
+  background-color:transparent;
+}
+.add-title-inner label {
+  margin-bottom: 1%;
+}
+.textarea {
+  font-size: 18px;
+  height: 150px;
+  border: 3px solid grey;
+}
+
+.add-firstBlock {
+  border-bottom: 2px solid grey;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2%;
+}
+.add-firstBlock-inner {
+  width: 95%;
+  margin-top: 2%;
+}
+
+.Condition-add{
+  margin-top: 2%;
+}
+.addConditon-iner{
+  display: flex;
+  flex-direction: row;
+}
+.addConditon-iner div{
+  width: 80px;
+  border: 2px solid  black;
+  justify-content: center;
+  display: flex;
+  margin-right: 2%;
+  padding: 1%;
+  font-size: 20px;
+  margin-top: 1%;
+  cursor: pointer;
+}
+.addConditon-iner div:hover{
+  background-color: #06baac;
+}
+.add-secondBlock{
+  border-bottom: 2px solid grey;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: flex;
+  margin:auto;
+  justify-content: center;
+}
+.add-secondBlock-inner{
+  width: 95%;
+  margin-bottom: 2%;
+}
+.addPic{
+  padding: 2%;
+  border: 2px solid grey;
+  border-radius: 3px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  margin-right: 2%;
+  cursor: pointer;
+  align-items: center;
+}
+.addPic:hover{
+  border: 2px solid #06baac;
 
 }
-.AddPostForm-main{
-width: 100%;
-border: 2px solid gray;
-}
-.AddPostForm-main-inner{
-    width: 100%;
-    display: flex;
-    margin: auto;
-    border-bottom: 2px solid grey;
-    flex-direction: column;
-    
+.addPic-upper{
+  display: flex;
+  flex-direction: row;
+
 }
