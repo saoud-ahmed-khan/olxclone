@@ -2,7 +2,6 @@ import React from 'react'
 import { RiSearchLine } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TiPlus } from "react-icons/ti";
-import { Login } from "../Login/Login";
 import { NavLink } from "react-router-dom";
 import "./Header.css"
 export function Header() {
