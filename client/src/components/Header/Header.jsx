@@ -11,7 +11,7 @@ export function Header() {
       
         <div  className="header-main">
             
-            <div className="header-logo"><NavLink to="/">A|X</NavLink></div>
+            <div className="header-logo"><NavLink to="/"> A|X </NavLink></div>
 
             <div className="header-location">
                 <button><RiSearchLine size="25"/></button>
@@ -28,7 +28,7 @@ export function Header() {
                 </div>
             </div>
             <div className="header-login"><NavLink to='/login'>Login</NavLink></div>
-            <div className="header-sale"><TiPlus/><span> <NavLink to='/sellingcat'>Sell</NavLink></span></div>
+            <div className="header-sale"><NavLink to='/sellingcat'><TiPlus/><span> Sell</span></NavLink></div>
 
             </div>
     )
