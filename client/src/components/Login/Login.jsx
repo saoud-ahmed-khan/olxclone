@@ -3,12 +3,14 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { BiPhone } from "react-icons/bi";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { AiOutlineClose } from "react-icons/ai";
 import { IoMdLogIn } from "react-icons/io";
 import { BiUserPlus } from "react-icons/bi";
 import { Error } from "./ErrorMessage";
 import "./login.css";
-import { Signup } from "../signup/Signup";
+import { AiOutlineClose } from "react-icons/ai";
+
+import { NavLink, useHistory } from "react-router-dom";
+import {} from "react-router";
 import AOS from "aos";
 
 import "aos/dist/aos.css";
@@ -30,9 +32,11 @@ const validationSchema = Yup.object({
   password: Yup.string().required(" Password Required"),
 });
 
-export function Login({ modal, setModal }) {
-  const [sign, setSign] = React.useState(false);
-
+export function Login() {
+  let history = useHistory();
+  const goPrevious = () => {
+    history.goBack();
+  };
   React.useEffect(() => {
     AOS.init({
       duration: 500,
@@ -40,13 +44,11 @@ export function Login({ modal, setModal }) {
   }, []);
   return (
     <>
-      {modal ? (
+      
         <div className="background">
           <div className="form-login" data-aos="zoom-in">
             <AiOutlineClose
-              onClick={() => {
-                setModal((prev) => !prev);
-              }}
+              onClick={goPrevious}
               className="login-cross"
               size="30"
             />
@@ -84,22 +86,17 @@ export function Login({ modal, setModal }) {
                 </div>
               </Form>
             </Formik>
+            <NavLink to="/signup">
             <div className="login-button">
               <BiUserPlus size="35" className="login-logo" />
-              <button
-                onClick={() => {
-                  setModal((prev) => !prev);
-                  setSign(true);
-                }}
-                type="submit"
-              >
-                Sign Up
+              <button  type="submit">
+                 Sign Up
               </button>
             </div>
+            </NavLink>
           </div>
         </div>
-      ) : null}
-      <Signup sign={sign} setSign={setSign} />
+      
     </>
   );
 }

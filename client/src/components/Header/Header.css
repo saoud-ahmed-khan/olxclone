@@ -33,6 +33,7 @@
   border: none;
   padding-left: 2%;
   font-size: 18px;
+  width: 100%;
 }
 .header-location button {
   border: none;
@@ -42,7 +43,6 @@
   align-items: center;
   display: flex;
   height: 100%;
-  width: 100%;
   cursor: pointer;
 }
 .header-location button:focus {
@@ -135,7 +135,7 @@ justify-content: center;
 }
 @media only screen and (min-width: 600px) 
 {
-    
+  
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

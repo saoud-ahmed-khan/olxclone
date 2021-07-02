@@ -7,6 +7,9 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { ImAddressBook } from "react-icons/im";
 import { BiUserPlus } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
+
+import { NavLink, useHistory } from "react-router-dom";
 import { FaCity } from "react-icons/fa";
 import { Error } from "../Login/ErrorMessage";
 import "../Login/login.css";
@@ -64,7 +67,11 @@ const validationSchema = Yup.object({
     .oneOf([Yup.ref("password"), null], "Passwords is not matching"),
   city: Yup.string().required("City missing"),
 });
-export function Signup({ sign, setSign }) {
+export function Signup() {
+  let history = useHistory();
+  const goPrevious = () => {
+    history.goBack();
+  };
   React.useEffect(() => {
     AOS.init({
       duration: 500,
@@ -72,92 +79,95 @@ export function Signup({ sign, setSign }) {
   }, []);
   return (
     <>
-      {sign ? (
-        <div className="background">
-          <div className="form-signup" data-aos="zoom-in">
-            <div>
-              <h1>Sign Up</h1>
-            </div>
-
-            <Formik
-              validationSchema={validationSchema}
-              onSubmit={submit}
-              initialValues={initialValue}
-            >
-              <Form>
-                <div className="phone">
-                  <div className="phone-inner">
-                    <AiOutlineUser className="login-logo" size="35" />
-                    <Field
-                      type="text"
-                      placeholder="User Name"
-                      id="username"
-                      name="username"
-                    />
-                  </div>
-                  <ErrorMessage component={Error} name="username" />
-                </div>
-
-                <div className="phone">
-                  <div className="phone-inner">
-                    <BiPhone className="login-logo" size="35" />
-                    <Field type="text" id="phone" name="phone" />
-                  </div>
-                  <ErrorMessage component={Error} name="phone" />
-                </div>
-
-                <div className="phone">
-                  <div className="phone-inner">
-                    <FaCity className="login-logo" size="30" />
-                    <Field className="select" as="select" id="city" name="city">
-                      {options.map((option) => {
-                        return (
-                          <option key={option.value} value={option.value}>
-                            {option.key}
-                          </option>
-                        );
-                      })}
-                    </Field>
-                  </div>
-                  <ErrorMessage component={Error} name="city" />
-                </div>
-                <div className="phone">
-                  <div className="phone-inner">
-                    <ImAddressBook className="login-logo" size="35" />
-                    <Field type="text" id="address" name="address" />
-                  </div>
-                  <ErrorMessage component={Error} name="address" />
-                </div>
-                <div className="password">
-                  <div className="phone-inner">
-                    <RiLockPasswordLine size="35" className="login-logo" />
-                    <Field type="password" id="password" name="password" />
-                  </div>
-                  <ErrorMessage component={Error} name="password" />
-                </div>
-                <div className="password">
-                  <div className="phone-inner">
-                    <RiLockPasswordFill size="35" className="login-logo" />
-                    <Field
-                      type="password"
-                      id="passwordConfirmation"
-                      name="passwordConfirmation"
-                    />
-                  </div>
-                  <ErrorMessage component={Error} name="passwordConfirmation" />
-                </div>
-
-                <div className="login-button">
-                  <BiUserPlus size="35" className="login-logo" />
-                  <button onClick={submit} type="submit">
-                    Sign Up
-                  </button>
-                </div>
-              </Form>
-            </Formik>
+      <div className="background">
+        <div className="form-signup" data-aos="zoom-in">
+          <AiOutlineClose
+            onClick={goPrevious}
+            className="login-cross"
+            size="30"
+          />
+          <div>
+            <h1>Sign Up</h1>
           </div>
+
+          <Formik
+            validationSchema={validationSchema}
+            onSubmit={submit}
+            initialValues={initialValue}
+          >
+            <Form>
+              <div className="phone">
+                <div className="phone-inner">
+                  <AiOutlineUser className="login-logo" size="35" />
+                  <Field
+                    type="text"
+                    placeholder="User Name"
+                    id="username"
+                    name="username"
+                  />
+                </div>
+                <ErrorMessage component={Error} name="username" />
+              </div>
+
+              <div className="phone">
+                <div className="phone-inner">
+                  <BiPhone className="login-logo" size="35" />
+                  <Field type="text" id="phone" name="phone" />
+                </div>
+                <ErrorMessage component={Error} name="phone" />
+              </div>
+
+              <div className="phone">
+                <div className="phone-inner">
+                  <FaCity className="login-logo" size="30" />
+                  <Field className="select" as="select" id="city" name="city">
+                    {options.map((option) => {
+                      return (
+                        <option key={option.value} value={option.value}>
+                          {option.key}
+                        </option>
+                      );
+                    })}
+                  </Field>
+                </div>
+                <ErrorMessage component={Error} name="city" />
+              </div>
+              <div className="phone">
+                <div className="phone-inner">
+                  <ImAddressBook className="login-logo" size="35" />
+                  <Field type="text" id="address" name="address" />
+                </div>
+                <ErrorMessage component={Error} name="address" />
+              </div>
+              <div className="password">
+                <div className="phone-inner">
+                  <RiLockPasswordLine size="35" className="login-logo" />
+                  <Field type="password" id="password" name="password" />
+                </div>
+                <ErrorMessage component={Error} name="password" />
+              </div>
+              <div className="password">
+                <div className="phone-inner">
+                  <RiLockPasswordFill size="35" className="login-logo" />
+                  <Field
+                    type="password"
+                    id="passwordConfirmation"
+                    name="passwordConfirmation"
+                  />
+                </div>
+                <ErrorMessage component={Error} name="passwordConfirmation" />
+              </div>
+
+              <div className="login-button">
+                <BiUserPlus size="35" className="login-logo" />
+                <button onClick={submit} type="submit">
+                  Sign Up
+                </button>
+              </div>
+            </Form>
+          </Formik>
         </div>
-      ) : null}
+      </div>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import {React,useState} from "react";
+import { React, useState } from "react";
 import "./AddPosting.css";
 import { AddPostingLeft } from "./AddPostingLeft";
 import * as Fa from "react-icons/fa";
@@ -12,24 +12,28 @@ let data = [
   { Catname: "Electronics", icon: Fa.FaTools },
 ];
 
-
 export function AddPosting() {
-  const [subData, setSubData]=useState("")
+  const [subData, setSubData] = useState("");
   return (
     <div className="AddPosting-main">
       <h1>POST YOUR AD</h1>
       <div className="AddPosting-wraper">
         <div className="AddPosting-heading">CHOOSE A CATEGORY</div>
         <div className="AddPosting-Cat-Main">
-          <div className="AddPosting-Cat-lists"> 
+          <div className="AddPosting-Cat-lists">
             <div>
               {data.map((data, index) => (
-                <AddPostingLeft key={index} sub={subData} data={data} setData={setSubData}/>
+                <AddPostingLeft
+                  key={index}
+                  sub={subData}
+                  data={data}
+                  setData={setSubData}
+                />
               ))}
             </div>
           </div>
           <div className="AddPosting-Cat-lists borderright">
-            <AddPostingRight inerdata={subData}/>
+            <AddPostingRight inerdata={subData} />
           </div>
         </div>
       </div>

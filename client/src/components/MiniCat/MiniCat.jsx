@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 import "./Mini.css"
 
@@ -7,7 +7,7 @@ export  function MiniCat() {
     return (
         <div className="Mini-main">
             <div className="Mini-cat" style={{fontWeight:450}}> ALL CATAGORIES
-                <MdKeyboardArrowDown size="35" />
+                <MdKeyboardArrowRight size="35" />
             </div>
             <div>Mobile</div>
             <div>Cars</div>
