@@ -1,5 +1,4 @@
 import "./App.css";
-import { Main } from "../src/components/pages/Main";
 import { Home } from "../src/components/pages/Home";
 import { Route } from "react-router-dom";
 // import { FeaturedItems } from "../src/components/Featured items/FeaturedItems";
@@ -25,11 +24,14 @@ function App() {
         <Home />
         <Signup />
       </Route>
-      <Route path="/sellingcatagories">
+      <Route path="/catagories">
         <AddPosting />
       </Route>
       <Route path="/selling">
         <AddPosting />
+      </Route>
+      <Route path="/selling/:productname">
+        <AddPostForm />
       </Route>
       <Footer />
     </div>

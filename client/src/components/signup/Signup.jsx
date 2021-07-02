@@ -9,7 +9,7 @@ import { ImAddressBook } from "react-icons/im";
 import { BiUserPlus } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 
-import { NavLink, useHistory } from "react-router-dom";
+import {  useHistory } from "react-router-dom";
 import { FaCity } from "react-icons/fa";
 import { Error } from "../Login/ErrorMessage";
 import "../Login/login.css";

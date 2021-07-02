@@ -32,19 +32,19 @@ export function AddPostingRight({ inerdata }) {
   return (
     <div>
       {inerdata === "Mobiles"
-        ? Mobiles.map((data) => <RightInner data={data} />)
+        ? Mobiles.map((data) => <RightInner inerdata={inerdata} data={data} />)
         : null}
       {inerdata === "Cars"
-        ? Cars.map((data) => <RightInner data={data} />)
+        ? Cars.map((data) => <RightInner inerdata={inerdata}  data={data} />)
         : null}
       {inerdata === "Bike"
-        ? Bike.map((data) => <RightInner data={data} />)
+        ? Bike.map((data) => <RightInner inerdata={inerdata} data={data} />)
         : null}
       {inerdata === "Electronics"
-        ? Electronics.map((data) => <RightInner data={data} />)
+        ? Electronics.map((data) => <RightInner inerdata={inerdata} data={data} />)
         : null}
       {inerdata === "House"
-        ? House.map((data) => <RightInner data={data} />)
+        ? House.map((data) => <RightInner inerdata={inerdata} data={data} />)
         : null}
     </div>
   );

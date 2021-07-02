@@ -27,7 +27,7 @@ export function Header() {
                 </div>
             </div>
             <div className="header-login"><NavLink to='/login'>Login</NavLink></div>
-            <div className="header-sale"><NavLink to='/sellingcatagories'><TiPlus/><span> Sell</span></NavLink></div>
+            <div className="header-sale"><NavLink to='/catagories'><TiPlus/><span> Sell</span></NavLink></div>
 
             </div>
     )

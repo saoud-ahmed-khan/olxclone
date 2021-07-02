@@ -31,6 +31,8 @@ export function AddPosting() {
                 />
               ))}
             </div>
+            {console.log(subData)}
+
           </div>
           <div className="AddPosting-Cat-lists borderright">
             <AddPostingRight inerdata={subData} />
