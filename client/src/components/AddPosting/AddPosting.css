@@ -4,12 +4,12 @@
 }
 .AddPosting-main {
   width: 80%;
-  margin: auto;
+  margin: auto;  
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10%;
+  margin-bottom: 10%;    
   margin-top: 5%;
 }
 

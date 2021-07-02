@@ -15,6 +15,7 @@
   background-color: #06baac;
   width: 30%;
   display: flex;
+  z-index: -10000;
   justify-content: center;
   margin: auto;
   flex-direction: column;
@@ -23,7 +24,6 @@
   padding-top: 3%;
   padding-bottom: 4%;
   border-radius: 0px 40px 0px;
-
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
 
 }
@@ -116,6 +116,7 @@ cursor: pointer;
   top: 12px;
 }
 .login-button {
+
   display: flex;
   margin-bottom: 4%;
   cursor: pointer;

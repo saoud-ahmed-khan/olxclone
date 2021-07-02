@@ -25,8 +25,11 @@ function App() {
         <Home />
         <Signup />
       </Route>
-      <Route path="/sellingcat">
-        <AddPosting/>
+      <Route path="/sellingcatagories">
+        <AddPosting />
+      </Route>
+      <Route path="/selling">
+        <AddPosting />
       </Route>
       <Footer />
     </div>
