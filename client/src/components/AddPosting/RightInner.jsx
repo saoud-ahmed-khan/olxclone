@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export function RightInner({ data, inerdata }) {
   return (
-    <NavLink to={`/catagories/${inerdata}`}>     
+    <NavLink to={`/selling`}>     
 
     <div
       className="AddPosting-Cat-lists-Rightinner"

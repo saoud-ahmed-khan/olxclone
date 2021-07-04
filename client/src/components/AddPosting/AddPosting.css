@@ -1,6 +1,7 @@
 .AddPosting-wraper {
   border: 2px solid grey;
   width: 100%;
+  margin-bottom: 10%;    
 }
 .AddPosting-main {
   width: 80%;
@@ -9,30 +10,24 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10%;    
   margin-top: 5%;
 }
-
 .AddPosting-heading {
   padding: 2%;
   border-bottom: 2px solid grey;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 .AddPosting-Cat-Main {
   display: flex;
   width: 100%;
   flex-direction: row;
 }
-
 .borderright {
   border-left: 2px solid grey;
 }
-
 .AddPosting-Cat-lists {
   width: 50%;
 }
-
 .AddPosting-Cat-lists-inner {
   display: flex;
   flex-direction: row;
@@ -43,7 +38,6 @@
   height: auto;
   margin: auto;
 }
-
 .add-logo {
   display: flex;
   align-items: center;

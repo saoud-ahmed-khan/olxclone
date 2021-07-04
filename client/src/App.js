@@ -28,11 +28,9 @@ function App() {
         <AddPosting />
       </Route>
       <Route path="/selling">
-        <AddPosting />
-      </Route>
-      <Route path="/selling/:productname">
         <AddPostForm />
       </Route>
+
       <Footer />
     </div>
   );
