@@ -43,9 +43,9 @@ const initialValue = {
   passwordConfirmation: "",
   city: "",
 };
-const submit = (values) => {
-  console.log(`formdata ${values}`);
-};
+const onSubmit = values => {
+  console.log('Form data', values)
+}
 const phoneRegExp =
   /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/;
 
@@ -92,7 +92,7 @@ export function Signup() {
 
           <Formik
             validationSchema={validationSchema}
-            onSubmit={submit}
+            onSubmit={onSubmit}
             initialValues={initialValue}
           >
             <Form>
@@ -153,6 +153,7 @@ export function Signup() {
                     type="password"
                     id="passwordConfirmation"
                     name="passwordConfirmation"
+                    
                   />
                 </div>
                 <ErrorMessage component={Error} name="passwordConfirmation" />
@@ -160,7 +161,7 @@ export function Signup() {
 
               <div className="login-button">
                 <BiUserPlus size="35" className="login-logo" />
-                <button onClick={submit} type="submit">
+                <button type='submit'>
                   Sign Up
                 </button>
               </div>
