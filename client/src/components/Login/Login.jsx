@@ -8,6 +8,7 @@ import { BiUserPlus } from "react-icons/bi";
 import { Error } from "./ErrorMessage";
 import "./login.css";
 import { AiOutlineClose } from "react-icons/ai";
+import swal  from "sweetalert";
 
 import { NavLink, useHistory } from "react-router-dom";
 import {} from "react-router";
@@ -22,9 +23,7 @@ export function Login() {
     phone: "",
     password: "",
   };
-  const onSubmit = values => {
-    console.log('Form data', values)
-  }
+ 
   const phoneRegExp =
     /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/;
   
@@ -34,6 +33,30 @@ export function Login() {
       .matches(phoneRegExp, "Phone number is not valid"),
     password: Yup.string().required(" Password Required").min(6),
   });
+  const onSubmit = async (values) => {
+    const res = await fetch("http://localhost:5000/api/v1/user/signin", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    phone: `${values.phone}`,
+    password: `${values.password}`,
+   
+  }),
+});
+const data = await res.json();
+console.log(data.message);
+
+if (data.status === 500 || !data || data.success === false) {
+  swal("Error!", data.message, "error");
+  console.log(data);
+} else {
+  console.log(data);
+  swal("Success!", data.message, "success");
+  history.push("/login")
+}
+};
   let history = useHistory();
   const goPrevious = () => {
     history.goBack();
