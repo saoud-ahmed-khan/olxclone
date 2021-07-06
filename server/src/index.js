@@ -3,15 +3,19 @@ const morgan = require("morgan");
 const { dbConnect } = require("./Database/index");
 const path = require("path");
 const app = express();
+
+var cors = require('cors')
+
 require("dotenv").config({
   path:
     process.env.NODE_ENV === "development"
       ? path.resolve(".env.dev")
-      : path.resolve(".env"),
+      : path.resolve(".env"),    
 });
 
 app.use(express.json({ extended: false }));
 app.use(morgan("dev"));
+app.use(cors())
 
 app.use("/api/v1", require("./Routes/index.route"));
 const PORT = 5000 || process.env.PORT;

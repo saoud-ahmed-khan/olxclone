@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 
+const jwt= require("jsonwebtoken")
 const { userModel } = require("../Models/user.models");
 
 exports.signup = async (req, res) => {
@@ -56,11 +57,12 @@ exports.login = async (req, res) => {
         message: "password not match",
       });
     }
-    return res.json({
-      success: true,
-      message: "you are login",
-      user: user,
-    });
+    const payload = {
+      phone: user.phone,
+      id: user._id,
+    };
+    const token = await jwt.sign(payload, process.env.JWT_SECRET);
+    return res.json({ success: true, message: "success", user, token });
   } catch (e) {
     console.log(e.message);
     return res.status(500).send({
@@ -71,9 +73,9 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.usermain= async(req,res)=>{
+exports.usermain = async (req, res) => {
   return res.json({
     success: true,
     message: "you are in main route",
-    
-  });}
+  });
+};

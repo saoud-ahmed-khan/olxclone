@@ -8,33 +8,15 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { ImAddressBook } from "react-icons/im";
 import { BiUserPlus } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-
+import swal  from "sweetalert";
 import {  useHistory } from "react-router-dom";
 import { FaCity } from "react-icons/fa";
 import { Error } from "../Login/ErrorMessage";
 import "../Login/login.css";
 import AOS from "aos";
-
+import axios from "axios";
 import "aos/dist/aos.css";
-const options = [
-  {
-    value: "",
-    key: "Select City",
-  },
 
-  {
-    value: "karachi",
-    key: "karachi",
-  },
-  {
-    value: "lahore",
-    key: "lahore",
-  },
-  {
-    value: "queeta",
-    key: "queeta",
-  },
-];
 const initialValue = {
   phone: "",
   password: "",
@@ -43,9 +25,7 @@ const initialValue = {
   passwordConfirmation: "",
   city: "",
 };
-const onSubmit = values => {
-  console.log('Form data', values)
-}
+
 const phoneRegExp =
   /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/;
 
@@ -68,6 +48,49 @@ const validationSchema = Yup.object({
   city: Yup.string().required("City missing"),
 });
 export function Signup() {
+  const [Cityerr, SetCityerr] =React.useState();
+  const [City, SetCity] = React.useState([]);
+  React.useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/v1/city/getcity")
+      .then((res) => {
+        SetCity(res.data.Cities);
+      })
+      .catch((e) => {
+        SetCityerr(e);
+      });
+
+
+  
+  }, []);
+  const onSubmit = async (values) => {
+        const res = await fetch("http://localhost:5000/api/v1/user/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: values.username,
+        phone: `${values.phone}`,
+        password: `${values.password}`,
+        city: `${values.city}`,
+        address: `${values.address}`,
+      }),
+    });
+    console.log(res);
+  
+    const data = await res.json();
+    console.log(data.message);
+  
+    if (data.status === 500 || !data || data.success === false) {
+      swal("Error!", data.message, "error");
+      console.log(data);
+    } else {
+      console.log(data);
+      swal("Success!", data.message, "success");
+      history.push("/login")
+    }
+  };
   let history = useHistory();
   const goPrevious = () => {
     history.goBack();
@@ -121,10 +144,10 @@ export function Signup() {
                 <div className="phone-inner">
                   <FaCity className="login-logo" size="30" />
                   <Field className="select" as="select" id="city" name="city">
-                    {options.map((option) => {
+                    {City.map((opt) => {
                       return (
-                        <option key={option.value} value={option.value}>
-                          {option.key}
+                        <option key={opt._id} value={opt._id}>
+                          {opt.cities}
                         </option>
                       );
                     })}

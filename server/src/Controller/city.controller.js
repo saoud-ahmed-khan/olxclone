@@ -21,3 +21,27 @@ exports.addcities = async (req, res) => {
     });
   }
 };
+
+exports.GetAllCity = async (req, res) => {
+  try {
+    const user = await cityModel.find({});
+    if (!user) {
+      return res.json({
+        success: false,
+        message: "city not found",
+      });
+    }
+    return res.json({
+      success: true,
+      message: "city found",
+      Cities: user,
+    });
+  } catch (error) {
+    console.log(e.message);
+    return res.status(500).send({
+      success: false,
+      error: e.message,
+      message: " internal server error",
+    });
+  }
+};
