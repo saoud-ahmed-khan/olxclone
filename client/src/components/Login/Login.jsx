@@ -15,24 +15,25 @@ import AOS from "aos";
 
 import "aos/dist/aos.css";
 
-const initialValue = {
-  phone: "",
-  password: "",
-};
-const submit = (values) => {
-  console.log(`formdata ${values}`);
-};
-const phoneRegExp =
-  /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/;
 
-const validationSchema = Yup.object({
-  phone: Yup.string()
-    .required("Phone Number Missing")
-    .matches(phoneRegExp, "Phone number is not valid"),
-  password: Yup.string().required(" Password Required"),
-});
 
 export function Login() {
+  const initialValue = {
+    phone: "",
+    password: "",
+  };
+  const onSubmit = values => {
+    console.log('Form data', values)
+  }
+  const phoneRegExp =
+    /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/;
+  
+  const validationSchema = Yup.object({
+    phone: Yup.string()
+      .required("Phone Number Missing")
+      .matches(phoneRegExp, "Phone number is not valid"),
+    password: Yup.string().required(" Password Required").min(6),
+  });
   let history = useHistory();
   const goPrevious = () => {
     history.goBack();
@@ -58,12 +59,11 @@ export function Login() {
             </div>
 
             <Formik
-              class
               validationSchema={validationSchema}
-              onSubmit={submit}
+              onSubmit={onSubmit}
               initialValues={initialValue}
             >
-              <Form>
+              <Form method="POST">
                 <div className="phone">
                   <div className="phone-inner">
                     <BiPhone className="login-logo" size="35" />
@@ -80,7 +80,7 @@ export function Login() {
                 </div>
                 <div className="login-button">
                   <IoMdLogIn size="35" className="login-logo" />
-                  <button onClick={submit} type="submit">
+                  <button type="submit">
                     Login
                   </button>
                 </div>

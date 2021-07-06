@@ -2,9 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "start": "nodemon ./src/index.js"
+    "start": "NODE_ENV=prodection  node .",
+    "start:dev": "NODE_ENV=development nodemon ."
   },
   "author": "saoud",
   "license": "ISC",
