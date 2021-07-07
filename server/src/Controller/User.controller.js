@@ -63,10 +63,10 @@ exports.login = async (req, res) => {
       id: user._id,
     };
     const token = await jwt.sign(payload, process.env.JWT_SECRET);
-    res.cookie("jwtToken", token, {
-      expires: new Date(Date.now() + 25892000000),
-      httpOnly: true,
-    });
+    res
+    .cookie("token", token, { httpOnly: true })
+    .send(_.pick(user, ["_id", "username", ""]));
+
     if (!isMatch) {
       return res.json({
         success: false,
