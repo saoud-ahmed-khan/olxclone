@@ -1,5 +1,4 @@
 const bcrypt = require("bcrypt");
-
 const jwt = require("jsonwebtoken");
 const { userModel } = require("../Models/user.models");
 
@@ -41,11 +40,11 @@ exports.signup = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-  const { phone, password    // return res.json({ success: true, message: "success", user, token });
-} = req.body;
+  const { phone, password } = req.body;
   try {
     const user = await userModel.findOne({ phone });
-    if (!user) {success
+    if (!user) {
+      success;
       return res.json({
         success: false,
         message: "phone/user not found",
@@ -63,19 +62,13 @@ exports.login = async (req, res) => {
       id: user._id,
     };
     const token = await jwt.sign(payload, process.env.JWT_SECRET);
-    res
-    .cookie("token", token, { httpOnly: true })
-    .send(_.pick(user, ["_id", "username", ""]));
-
     if (!isMatch) {
       return res.json({
         success: false,
         message: "password not match",
       });
-    }
-    else{
-    return res.json({ success: true, message: "You Are Login", user, token });
-
+    } else {
+      return res.json({ success: true, message: "You Are Login", user, token });
     }
   } catch (e) {
     console.log(e.message);
