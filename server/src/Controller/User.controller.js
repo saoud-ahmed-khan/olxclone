@@ -1,7 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { userModel } = require("../Models/user.models");
-
 exports.signup = async (req, res) => {
   const { username, phone, city, password, address } = req.body;
   if (!username || !phone || !city || !password || !address) {
@@ -60,16 +59,27 @@ exports.login = async (req, res) => {
     const payload = {
       phone: user.phone,
       id: user._id,
+      name:user.username
     };
+
     const token = await jwt.sign(payload, process.env.JWT_SECRET);
-    if (!isMatch) {
-      return res.json({
-        success: false,
-        message: "password not match",
-      });
-    } else {
-      return res.json({ success: true, message: "You Are Login", user, token });
-    }
+    const jwtsavetoken = await userModel.findOneAndUpdate();
+    const filter = { phone: user.phone };
+    const update = { token: token };
+
+    let doc = await userModel.findOneAndUpdate(filter, update, {
+      new: true,
+    });
+    res.cookie('token', token, {expires: new Date(Date.now() + 9999999)}).send({ success: true, message: "You Are Login", user, token });
+
+    // if (!isMatch) {
+    //   return res.json({
+    //     success: false,
+    //     message: "password not match",
+    //   });
+    // } else {
+    //   return res.json({ success: true, message: "You Are Login", user, token });
+    // }
   } catch (e) {
     console.log(e.message);
     return res.status(500).send({

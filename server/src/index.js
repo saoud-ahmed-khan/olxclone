@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const { dbConnect } = require("./Database/index");
 const path = require("path");
 const app = express();
-const cookieParser = require("cookie-parser");
+var cookieParser = require("cookie-parser");
 
 var cors = require("cors");
 
@@ -16,7 +16,7 @@ require("dotenv").config({
 
 app.use(express.json({ extended: false }));
 app.use(morgan("dev"));
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
 app.use(cookieParser());
 
 app.use("/api/v1", require("./Routes/index.route"));

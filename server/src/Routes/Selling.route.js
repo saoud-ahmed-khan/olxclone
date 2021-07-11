@@ -2,18 +2,9 @@ const express = require("express");
 const { sellController } = require("../Controller/index.controller");
 const app = express();
 const Router = express.Router();
-const multer = require("multer");
+const {authMiddleware} = require('../Middleware/index')
 
-const storage = multer.diskStorage({
-  destination: (req, file, callback) => {
-    callback(null, "./public/uploads");
-  },
-  filename: (req, file, callback) => {
-    callback(null, file.originalname);
-  },
-});
-const upload = multer({ storage: storage });
 
-Router.post("/itemsell", upload.single("productImage"), sellController.selling);
+Router.get("/catagories", authMiddleware ,sellController.mains);
 
 exports.sellRouter = app.use("/sell", Router);

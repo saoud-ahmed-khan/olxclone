@@ -27,3 +27,7 @@ exports.selling = async (req, res) => {
     });
   }
 };
+exports.mains = async (req, res) => {
+  const {phone,id,name}= req.user;
+  res.json({phone,id,name, success:false})
+};

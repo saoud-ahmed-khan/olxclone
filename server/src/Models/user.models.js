@@ -30,8 +30,10 @@ const userschema = new schema(
       trim: true,
       required: true,
     },
-    Token:{
-      
+
+    token: {
+      type: String,
+      required: true,
     }
   },
   { timestamps: true }
